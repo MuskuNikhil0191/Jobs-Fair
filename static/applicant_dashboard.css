@@ -1,0 +1,44 @@
+/* static/dashboard.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+
+}
+
+.col {
+    flex: 0 0 30%;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h3 {
+    color: #000000;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

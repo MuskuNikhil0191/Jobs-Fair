@@ -1,0 +1,159 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Browse Job Postings{% endblock %}
+
+{% block content %}
+    <title>Profile Update</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile_update.css') }}">
+
+
+<div class="container">
+    <h2>Profile Update</h2>
+    <form action="/update_profile" method="POST" enctype="multipart/form-data">
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h3>Experience</h3>
+            <div class="form-group">
+                <label for="experience_years">Years of Experience</label>
+                <input type="number" id="experience_years" name="experience_years" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="experience_sector">Experience Sector</label>
+                <select id="experience_sector" name="experience_sector">
+                    <option value="app_development">App Development</option>
+                    <option value="networking">Networking</option>
+                    <option value="testing">Testing</option>
+                    <option value="database_management">Database Management</option>
+                    <option value="cyber_security">Cyber Security</option>
+                    <option value="machine_learning">Machine Learning</option>
+                    <option value="web_development">Web Development</option>
+                    <option value="cloud_computing">Cloud Computing</option>
+                    <option value="business_analytics">Business Analytics</option>
+                    <option value="project_management">Project Management</option>
+                    <option value="technical_support">Technical Support</option>
+                    <option value="data_analysis">Data Analysis</option>
+                    <option value="artificial_intelligence">Artificial Intelligence</option>
+                    <option value="mobile_development">Mobile Development</option>
+                    <option value="iot">Internet of Things (IoT)</option>
+                    <option value="telecommunications">Telecommunications</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Education</h3>
+        
+            <!-- Masters -->
+            <div class="form-group">
+                <label for="masters">Masters</label>
+                <select id="masters" name="masters">
+                    <option value="app_development">App Development</option>
+                    <option value="networking">Networking</option>
+                    <option value="testing">Testing</option>
+                    <option value="database_management">Database Management</option>
+                    <option value="cyber_security">Cyber Security</option>
+                    <option value="machine_learning">Machine Learning</option>
+                    <option value="web_development">Web Development</option>
+                    <option value="cloud_computing">Cloud Computing</option>
+                    <option value="business_analytics">Business Analytics</option>
+                    <option value="project_management">Project Management</option>
+                    <option value="technical_support">Technical Support</option>
+                    <option value="data_analysis">Data Analysis</option>
+                    <option value="artificial_intelligence">Artificial Intelligence</option>
+                    <option value="mobile_development">Mobile Development</option>
+                    <option value="iot">Internet of Things (IoT)</option>
+                    <option value="telecommunications">Telecommunications</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        
+            <!-- Bachelors -->
+            <div class="form-group">
+                <label for="bachelors">Bachelors</label>
+                <select id="bachelors" name="bachelors">
+                    <option value="app_development">App Development</option>
+                    <option value="networking">Networking</option>
+                    <option value="testing">Testing</option>
+                    <option value="database_management">Database Management</option>
+                    <option value="cyber_security">Cyber Security</option>
+                    <option value="machine_learning">Machine Learning</option>
+                    <option value="web_development">Web Development</option>
+                    <option value="cloud_computing">Cloud Computing</option>
+                    <option value="business_analytics">Business Analytics</option>
+                    <option value="project_management">Project Management</option>
+                    <option value="technical_support">Technical Support</option>
+                    <option value="data_analysis">Data Analysis</option>
+                    <option value="artificial_intelligence">Artificial Intelligence</option>
+                    <option value="mobile_development">Mobile Development</option>
+                    <option value="iot">Internet of Things (IoT)</option>
+                    <option value="telecommunications">Telecommunications</option>
+                </select>
+            </div>
+        
+            <!-- High School -->
+            <div class="form-group">
+                <label for="high_school">High School</label>
+                <select id="high_school" name="high_school">
+                    <option value="science">Science</option>
+                    <option value="arts">Arts</option>
+                    <option value="commerce">Commerce</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        </div>
+        <!-- Skills Section -->
+        <div class="section">
+            <h3>Skills</h3>
+                <!-- Skill 2 -->
+                <div class="form-group">
+                    <label for="programming_languages_2">Skill 2</label>
+                    <select id="programming_languages_2" name="programming_languages_2" multiple size="5">
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="c">C</option>
+                        <option value="c++">C++</option>
+                        <option value="c_sharp">C#</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="php">PHP</option>
+                        <option value="swift">Swift</option>
+                        <option value="kotlin">Kotlin</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="html_css">HTML/CSS</option>
+                        <option value="go">Go</option>
+                        <option value="rust">Rust</option>
+                        <option value="scala">Scala</option>
+                        <option value="shell_scripting">Shell Scripting</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section">
+                <h3>Certifications</h3>
+            
+                <!-- Certification -->
+                <div class="form-group">
+                    <label for="certifications">Certifications</label>
+                    <textarea id="certifications" name="certifications" rows="4"></textarea>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>Awards</h3>
+            
+                <!-- Awards -->
+                <div class="form-group">
+                    <label for="awards">Awards</label>
+                    <textarea id="awards" name="awards" rows="4"></textarea>
+                </div>
+            </div>
+            <!-- Skill 3 -->
+            <label for="resume">Upload Resume</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+        </section>
+        <!-- Submit Button -->
+        <button type="submit">Update Profile</button>
+    </form>
+</div>
+
+{% endblock %}

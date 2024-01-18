@@ -1,0 +1,91 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Browse Job Postings{% endblock %}
+
+{% block content %}
+    <title>Job Applications</title>
+    <style>
+table {
+    margin-top: 10%;
+    margin-left: 10%;
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px,
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increase padding for better spacing */
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Apply alternate row background color for better readability */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+        a {
+            text-decoration: none;
+            color: #0073b1;
+        }
+
+        .hire, .reject {
+            padding: 6px 12px;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .hire {
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .reject {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .hire[disabled]:hover,
+    .reject[disabled]:hover {
+        cursor: not-allowed;
+    }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>email</th>
+                <th>mobile</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        
+            {% for comp in company %}
+                <tr>
+                    <td>{{ comp.name }}</td>
+                    <td>{{ comp.email }}</td>
+                    <td><form action="/del_rec" method="post">
+                        <!-- Hidden input fields to store the necessary data -->
+                        <input type="hidden" name="application_id" value="{{ comp._id }}">
+                
+                        <button class="hire" type="submit" >delete</button>
+                    </form></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {% endblock %}

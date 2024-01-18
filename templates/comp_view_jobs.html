@@ -1,0 +1,68 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Browse Job Postings{% endblock %}
+
+{% block content %}
+    <title>Job Postings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+          text-decoration: none;
+    color: inherit;  /* This ensures that the link color remains the same as the surrounding text */
+            }
+        .job-card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .job-card img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .job-details {
+            flex-grow: 1;
+        }
+
+        h2, h4,h6 {
+            margin: 0;
+            margin-top: 5px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        h6{
+            color: #6c757d;
+        }
+    </style>
+
+{% set random_image = url_for('static', filename=f'images/{random.randint(1, 5)}.png') %}
+
+    {% for job in job_openings %}
+    <a href="{{ url_for('comp_view_applications', job_id=job._id) }}" class="job-card">
+        <img src="{{ random_image }}" alt="Company Logo">
+        <div class="job-details">
+            <h2>{{ job.jobTitle }}</h2>
+            <h4>{{ job.username }}</h4>
+            <h6>{{ job.location }}</h6>
+        </div>
+    </a>
+    {% endfor %}
+    
+    {% endblock %}

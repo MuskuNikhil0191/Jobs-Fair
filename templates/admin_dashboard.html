@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Browse Job Postings{% endblock %}
+
+{% block content %}
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='applicant_dashboard.css') }}">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h3>Companies</h3>
+                <p>View Companies</p>
+                <a href="/adm_view_comp">Create Post</a>
+            </div>
+        </div>
+
+
+        <div class="col">
+            <div class="card">
+                <h3>applied</h3>
+                <p>View applied Companies</p>
+                <a href="/admin_app_comp">approve</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,39 @@
+/* static/login.css */
+body {
+    background-color: #f8f9fa;
+    background-image: url('/static/images/login.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust the background-size property as needed */
+}
+
+h5{
+    margin-left: 35%;
+}
+
+.login-card {
+    border-radius: 5px;
+    width: 300px;
+    margin-top: 10%;
+}
+.butn {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    background-color: #3C94F8; /* Blue color for the button, you can change it to your preferred color */
+    color: #fff; /* Text color */
+    padding: 10px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 3px; /* Optional: Add border radius for rounded corners */
+    cursor: pointer; /* Add cursor pointer on hover */
+}
+
+
+
+
+.alink {
+    margin-top: 30px;
+    text-decoration: none; /* Remove underlines */
+    color: #00070e; /* Set the link color to blue, you can change it to your preferred color */
+    cursor: pointer;
+    margin-left: 40%;/* Add cursor pointer on hover */
+}

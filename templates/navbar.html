@@ -1,0 +1,79 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Job Postings{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            padding: 15px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-icon">
+        <!-- You can replace this with your preferred icon or use an <img> tag for an image -->
+        🌟
+    </div>
+    <div class="navbar-options">
+        {% if 'user' in session and session['user']['role'] == 'companies' %}
+            <!-- Show company-specific navigation options -->
+            <a href="/company-dashboard">Dashboard</a>
+            <a href="/post_job">Post Job</a>
+            <a href="comp_view_applications">View</a>
+        {% elif 'user' in session and session['user']['role'] == 'applicants' %}
+            <!-- Show applicant-specific navigation options -->
+            <a href="/applicant-dashboard">Dashboard</a>
+            <a href="/browse">Browse Jobs</a>
+            <a href="/view_history">Application History</a>
+        {% elif 'user' in session and session['user']['role'] == 'admin' %}
+            <!-- Show applicant-specific navigation options -->
+            <a href="/admin_dashboard">Dashboard</a>
+            <a href="/adm_view_comp">Companies</a>
+
+
+        {% elif 'user' in session and session['user']['role'] == 'recruiters' %}
+            <!-- Show applicant-specific navigation options -->
+            <a href="/recruiter-dashboard">Dashboard</a>
+
+        {% endif %}
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

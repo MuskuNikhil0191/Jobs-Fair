@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "65678006f6d7ed2260a2da71"
+  },
+  "name": "agastya",
+  "email": "agastya@gmail.com",
+  "mobile": "21312312",
+  "password": "$2b$12$dqcvE9XhDkpwV.3DXIiqR.zBXtr3e4I6M7gegaX0MzAHlYXW0yAKq",
+  "experience_sector": "cloud_computing",
+  "experience_years": "2",
+  "recent_studies": "bachelors",
+  "skills": [
+    "python",
+    "python",
+    "python",
+    "python",
+    "python"
+  ],
+  "stream": "computer_science"
+},
+{
+  "_id": {
+    "$oid": "6567f74c4e1b272e541c9589"
+  },
+  "name": "user",
+  "email": "user@gmail.com",
+  "mobile": "12233",
+  "password": "$2b$12$3zsGZ8vUouU1nfrJd4mbsOaO7tV33rbO6DVZw8yF/WmLL/U7GXCL6",
+  "experience_sector": "web_development",
+  "experience_years": "2",
+  "recent_studies": "bachelors",
+  "skills": [
+    "c_sharp",
+    "c++",
+    "ruby",
+    "go",
+    "php"
+  ],
+  "stream": "electrical"
+},
+{
+  "_id": {
+    "$oid": "6567fa184e1b272e541c958c"
+  },
+  "name": "user2",
+  "email": "user2@gmail.com",
+  "mobile": "12312",
+  "password": "$2b$12$tdmgU2BBkGCDPvcfX.ZD3.DSIZDHRfCTC3lL2XhkO9/iEQwfz9JWy"
+}]

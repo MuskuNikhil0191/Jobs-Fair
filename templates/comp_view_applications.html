@@ -1,0 +1,110 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Browse Job Postings{% endblock %}
+
+{% block content %}
+    <title>Job Applications</title>
+    <style>
+table {
+    margin-top: 10%;
+    margin-left: 10%;
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px,
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increase padding for better spacing */
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Apply alternate row background color for better readability */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+        a {
+            text-decoration: none;
+            color: #0073b1;
+        }
+
+        .hire, .reject {
+            padding: 6px 12px;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .hire {
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .reject {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .hire[disabled]:hover,
+    .reject[disabled]:hover {
+        cursor: not-allowed;
+    }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>status</th>
+                <th>View Candidates</th>
+                <th>View Resume</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            {% for application in job_applications %}
+                <tr>
+                    <td>{{ application.full_name }}</td>
+                    <td>{{ application.status }}</td>
+                    <td><a href="{{ url_for('view_candidate', can_id=application.user_id) }}">View Candidates</a></td>
+                    <td><a href="{{ url_for('view_resume',can_id=application.user_id ) }}" target="_blank">View Resume</a></td>
+                    <td class="scrollable-td">{{ application.cv }}</td>
+                    <td>
+                        <form action="/hire_applicant" method="post">
+                            <!-- Hidden input fields to store the necessary data -->
+                            <input type="hidden" name="application_id" value="{{ application._id }}">
+                            <input type="hidden" name="job_id" value="{{ application.jobid }}">
+                            <input type="hidden" name="user_id" value="{{ application.user_id }}">
+                        
+                            <!-- Submit button to trigger the form submission -->
+    
+                            <button class="hire" type="submit" {% if application.status in ['hired'] %}disabled{% endif %}>Hire</button>
+                        </form>
+                            <form action="/reject_applicant" method="post">
+                                <!-- Hidden input fields to store the necessary data -->
+                                <input type="hidden" name="application_id" value="{{ application._id }}">
+                                <input type="hidden" name="job_id" value="{{ application.jobid }}">
+                                <input type="hidden" name="user_id" value="{{ application.user_id }}">
+                            
+                                <!-- Submit button to trigger the form submission -->
+                                <button class="reject" type="submit" {% if application.status == 'rejected' %}disabled{% endif %}>Reject</button>
+                            </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    {% endblock %}

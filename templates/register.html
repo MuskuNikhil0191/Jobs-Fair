@@ -1,0 +1,96 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Link to the CSS file in the static directory -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<style>
+            nav {
+            background-color: transparent;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure the nav bar appears above other elements */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            float: right;
+        }
+
+        nav li {
+            display: inline;
+            margin: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            padding: 14px 16px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: black;
+        }
+</style>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/register_company">Company</a></li>
+            <li><a href="/register">Applicant</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card login-card">
+            <div class="card-body">
+                <h5 class="card-title">Register</h5>
+                <form action="/register" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Enter your mobile number">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Confirm your password">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" id="user_type" name="user_type" value="applicant" >
+                    <button type="submit" class="butn">Register</button>
+                </form>
+                <a class="alink" href="/">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+<!-- Include Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "6567f7b64e1b272e541c958a"
+  },
+  "user_id": "6567f74c4e1b272e541c9589",
+  "jobid": "6567f6ee4e1b272e541c9588",
+  "full_name": "user",
+  "resume_filename": "LINES_1.pdf",
+  "status": "hired"
+},
+{
+  "_id": {
+    "$oid": "6567fa344e1b272e541c958d"
+  },
+  "user_id": "6567fa184e1b272e541c958c",
+  "jobid": "6567f6ee4e1b272e541c9588",
+  "full_name": "user2",
+  "resume_filename": "LINES_1.pdf",
+  "status": "rejected"
+}]

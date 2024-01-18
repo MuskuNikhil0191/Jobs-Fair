@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+
+{% block title %}Browse Job Postings{% endblock %}
+
+{% block content %}
+
+<style>
+    .container {
+        display: flex;
+        gap: 20px;
+
+    }
+
+    .card {
+        background-color: #ffffff;
+        color: #000000;
+        padding: 20px;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        text-align: center;
+        width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+</style>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='applicant_dashboard.css') }}">
+    <div class="container">
+        {% for company in companies %}
+            <div class="card">
+                <h3>{{ company.name }}</h3>
+                <p>{{ company.description }}</p>
+                <a href="/company_details/{{ company._id }}">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

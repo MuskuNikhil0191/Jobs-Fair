@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "656786a47299f412bb8c7414"
+  },
+  "email": "comp1@gmail.com",
+  "password": "$2b$12$aZxSvf9fhYAOrNHpw44eL.kF3tsnQw6EY4CdV28SLmZk8uu5SzBu6",
+  "name": "company1"
+},
+{
+  "_id": {
+    "$oid": "6567f6bd4e1b272e541c9587"
+  },
+  "name": "coke",
+  "email": "coke@gmail.com",
+  "mobile": "12312",
+  "password": "$2b$12$IiQehMd9WtBMMdYBF2oV5ut0diNM.NLep/Ads2nt8hKdrJgKP4Ymq"
+}]

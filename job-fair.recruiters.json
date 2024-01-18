@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6567e75ba30e331784a6b1ed"
+  },
+  "name": "rec",
+  "email": "rec@gmail.com",
+  "mobile": "213123",
+  "password": "$2b$12$ozfPTwgomto4rwRCEDFeBudxc7MvHCLJM7i3yahzJAZkptuMpt8Ii"
+},
+{
+  "_id": {
+    "$oid": "6567f83a4e1b272e541c958b"
+  },
+  "name": "recruiter",
+  "email": "recruiter@gmail.com",
+  "mobile": "12312",
+  "password": "$2b$12$3ril0pueMq1TXSx61MMhPeTiufVyam8auU1f3sPByctcvwsWbtrae"
+},
+{
+  "_id": {
+    "$oid": "656814cf97fa1d9a817c348f"
+  },
+  "name": "sample_rec",
+  "email": "sample_rec@gmail.com",
+  "password": "$2b$12$ntrd2I0P.r4mL3yx7dsiFuKsRcc.6eNXYl.jPeavNceTFZAagjtOO",
+  "company": "coke"
+},
+{
+  "_id": {
+    "$oid": "65681a12e1440da1958a39a4"
+  },
+  "name": "coke_rec",
+  "email": "coke_rec@gmail.com",
+  "password": "$2b$12$cER6wzF/cC79xVceqMIJvOtDWXX.CD0kwNp24nQ7pcaSooG28QUFa",
+  "company": "coke"
+}]

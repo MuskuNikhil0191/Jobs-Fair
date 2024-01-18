@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "6567dc0126d5c29df11258dd"
+  },
+  "jobTitle": "web developper",
+  "jobDescription": "sample description",
+  "experience": "2",
+  "skills": [
+    "python",
+    "python",
+    "python"
+  ],
+  "payPerHour": "20",
+  "location": "overlandpark2",
+  "openings": 0,
+  "usermail": "comp1@gmail.com",
+  "username": "company1"
+},
+{
+  "_id": {
+    "$oid": "6567de9cd6bba047029da8a2"
+  },
+  "jobTitle": "asd",
+  "jobDescription": "sdf",
+  "experience": "dfg",
+  "skills": [
+    "python",
+    "python",
+    "python"
+  ],
+  "payPerHour": "1",
+  "location": "asd",
+  "openings": 2,
+  "usermail": "comp1@gmail.com",
+  "username": "company1"
+},
+{
+  "_id": {
+    "$oid": "6567f6ee4e1b272e541c9588"
+  },
+  "jobTitle": "tech lead",
+  "jobDescription": "need tech people",
+  "experience": "5",
+  "skills": [
+    "c++",
+    "c++",
+    "swift"
+  ],
+  "payPerHour": "10",
+  "location": "overlandpark",
+  "openings": 0,
+  "usermail": "coke@gmail.com",
+  "username": "coke"
+}]
